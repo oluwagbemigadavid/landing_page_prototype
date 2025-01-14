@@ -1,18 +1,29 @@
 import bgImg from './assets/images/IMG_9155.jpg'
 import gsap from 'gsap'
-import { GridLines, Loader } from './components'
+import { GridLines, HEROGRID, Loader } from './components'
 import { ScrollTrigger } from 'gsap/all'
+import { useEffect, useState } from 'react'
 
 gsap.registerPlugin(ScrollTrigger)
 function App() { 
 
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    // const setLoading = 
+  
+    return () => {
+      
+    }
+  }, [1000])
+  
+
   return (
     <div className="relative w-full h-screen  bg-white dark:bg-black">
      {/* first layer, image background */}
-     <img src={bgImg} className='w-full h-full object-cover object-top' alt='Background image' />
+     <img src={bgImg} className='absolute z-[0] w-full h-full object-cover object-top' alt='Background image' />
      {/* Grid Layer */}
-     {/* Overlay Layer */}
-     <div className="w-full h-full absolute top-0 left-0 bg-black/90"></div>
+     <HEROGRID />
      {/* Lines Layer */}
      <GridLines />
      {/* Loader */}
